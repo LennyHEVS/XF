@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_x_f_event.html" title="Base class for all types of events and timeouts. " alt="" coords="5,81,73,108"/>
+<area shape="rect" id="node2" href="$class_x_f_custom_event.html" title="Base class for project related events. " alt="" coords="123,5,234,32"/>
+<area shape="rect" id="node3" href="$class_x_f_initial_event.html" title="Initial event to start a behavior. " alt="" coords="129,56,228,83"/>
+<area shape="rect" id="node4" href="$class_x_f_null_transition.html" title="State machine transition without trigger. " alt="" coords="121,107,236,133"/>
+<area shape="rect" id="node5" href="$class_x_f_timeout.html" title="Used by the TimeoutManager to create and handle a timeout. " alt="" coords="137,157,221,184"/>
+</map>

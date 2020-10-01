@@ -1,0 +1,4 @@
+<map id="evRestart" name="evRestart">
+<area shape="rect" id="node2" href="C:/Users/thomas.sterren/Desktop/03-release/work/src/xf/doxygen/xf.tag$class_x_f_custom_event.html" title="{XFCustomEvent\n|# _bDeleteAfterConsume\l|+ XFCustomEvent()\l+ deleteAfterConsume()\l# setDeleteAfterConsume()\l}" alt="" coords="5,336,184,443"/>
+<area shape="rect" id="node3" href="C:/Users/thomas.sterren/Desktop/03-release/work/src/xf/doxygen/xf.tag$class_x_f_event.html" title="{XFEvent\n|+ Unknown\l+ Initial\l+ NullTransition\l+ Event\l+ Timeout\l+ Terminate\l# _eventType\l# _id\l# _pBehavior\l|+ XFEvent()\l+ ~XFEvent()\l+ getEventType()\l+ getBehavior()\l+ setBehavior()\l+ getId()\l+ deleteAfterConsume()\l}" alt="" coords="15,5,175,288"/>
+</map>

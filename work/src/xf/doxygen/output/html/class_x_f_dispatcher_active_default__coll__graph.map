@@ -1,0 +1,5 @@
+<map id="XFDispatcherActiveDefault" name="XFDispatcherActiveDefault">
+<area shape="rect" id="node2" href="$classinterface_1_1_x_f_thread_entry_point_provider.html" title="Interface to be implemented by the class providing the thread entry method. " alt="" coords="5,71,219,178"/>
+<area shape="rect" id="node3" href="$classinterface_1_1_x_f_dispatcher.html" title="Interface for the XF dispatcher providing the event processing loop. " alt="" coords="243,5,400,244"/>
+<area shape="rect" id="node4" href="$classinterface_1_1_x_f_thread.html" title="Interface for a Thread. " alt="" coords="424,42,563,207"/>
+</map>

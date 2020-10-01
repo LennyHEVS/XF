@@ -1,0 +1,4 @@
+<map id="StateMachine02" name="StateMachine02">
+<area shape="rect" id="node2" href="C:/Users/thomas.sterren/Desktop/03-release/work/src/xf/doxygen/xf.tag$class_x_f_behavior.html" title="{XFBehavior\n|# _pDispatcher\l# _hasOwnDispatcher\l# deleteOnTerminate_\l# _pCurrentEvent\l|+ XFBehavior()\l+ startBehavior()\l+ pushEvent()\l+ deleteOnTerminate()\l+ setDeleteOnTerminate()\l# processEvent()\l# getCurrentEvent()\l# getDispatcher()\l# hasOwnDispatcher()\l# getCurrentTimeout()\l# scheduleTimeout()\l# unscheduleTimeout()\l}" alt="" coords="5,189,177,472"/>
+<area shape="rect" id="node3" href="C:/Users/thomas.sterren/Desktop/03-release/work/src/xf/doxygen/xf.tag$classinterface_1_1_x_f_reactive.html" title="{interface::XFReactive\n||+ startBehavior()\l+ pushEvent()\l+ deleteOnTerminate()\l+ setDeleteOnTerminate()\l# process()\l}" alt="" coords="5,5,177,141"/>
+</map>

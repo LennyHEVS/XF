@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classinterface_1_1_x_f_dispatcher.html" title="Interface for the XF dispatcher providing the event processing loop. " alt="" coords="10,71,167,98"/>
+<area shape="rect" id="node2" href="$class_x_f_dispatcher_active_default.html" title="A dispatcher implementation which may be executed using an internal thread. " alt="" coords="220,17,391,43"/>
+<area shape="rect" id="node3" href="$class_x_f_dispatcher_default.html" title="A dispatcher implementation which can be used without an OS. " alt="" coords="237,71,374,98"/>
+<area shape="rect" id="node4" href="$classinterface_1_1_x_f_thread_entry_point_provider.html" title="Interface to be implemented by the class providing the thread entry method. " alt="" coords="5,5,172,47"/>
+</map>

@@ -1,0 +1,101 @@
+#ifndef TEST_BENCH_H
+#define TEST_BENCH_H
+
+/** \mainpage PTR XF Test Bench Documentation
+ *
+ * \section sec_text_bench_intro PTR XF Test Bench
+ * This test bench contains several test projects. Every project contains class(es) to test the <a href="../../../../xf/doxygen/output/html/index.html">PTR XF</a>.
+ *
+ * \section sec_test_bench_proj_overview Test Projects Overview
+ * - \ref test01
+ * - \ref test02
+ * - \ref test03
+ * - \ref test04
+ * - \ref test05
+ *
+ * \section sec_test_bench_external_links Links to related Documentation
+ * - <a href="../../../../src/xf/doxygen/output/html/index.html">XF Documentation</a>
+ * - <a href="../../../../src/mdw/trace/doxygen/output/html/index.html">Trace Documentation</a>
+ */
+
+/**
+ * \defgroup test_bench PTR XF Test Bench
+ * \brief    All tests in this Test Bench.
+ *
+ * @{
+ */
+
+/**
+ * \defgroup test01 First Test Project
+ * \brief    Uses Task01Tm class to test XF.
+ *
+ * This test lanches an instance of the Task01Tm class and produces some output. Optionally,
+ * multiple instances of Task01Tm can be created to test the XF.
+ *
+ * The Test Factory (TestFactory01) instanciates 2 objects:
+ * - An object of Task01Tm which outputs the text \b "Say Hello" every second
+ * - An object of Task01Tm which outputs the text \b "Echo" every half second
+ *
+ * This results into the following output:
+ * \image html test01-output.png "Output Received by the TraceLog Application"
+ */
+
+/**
+ * \defgroup test02 Second Test Project
+ * \brief    Uses StateMachine02 class to test XF.
+ *
+ * This test checks again timeout handling and proper termination of a state
+ * machine.
+ * In case the state machine was statically/globally created, the XF must not
+ * delete the object, when requested to terminate the behavior. If the
+ * state-machine was created on the heap (dynamic allocation), the XF must
+ * delete the state machine upon request to terminate. 
+ *
+ * Wether or not the state machine should be deleted is handled with the
+ * 'deleteOnTerminate()' method provided by the XFReactive interface.
+ *
+ * This results into the following output:
+ * \image html test02-output.png "Output Received by the TraceLog Application"
+ */
+
+/**
+ * \defgroup test03 Thirth Test Project
+ * \brief    Uses StateMachine03 class to test XF.
+ *
+ * This test checks basic event handling in state machines. In this example
+ * the StateMachine03 class sends itself an \a evRestart event to change from
+ * one state to another.
+ *
+ * This results into the following output:
+ * \image html test03-output.png "Output Received by the TraceLog Application"
+ */
+
+/**
+ * \defgroup test04 Forth Test Project
+ * \brief    Uses StateMachine04a and StateMachine04b class to test XF.
+ *
+ * Tests if timeouts are correctly cancelled. When leaving a state with a transition
+ * having a timeout, without the timeout raises, the timeout must be cancelled (unscheduled).
+ *
+ * This results into the following output:
+ * \image html test04-output.png "Output Received by the TraceLog Application"
+ *
+ */
+ 
+/**
+ * \defgroup test05 Fifth Test Project
+ * \brief    Uses StateMachine05a and StateMachine05b class to test XF.
+ *
+ * With this test multiple timeouts are added to the XFTimeoutManager list at the same time.
+ * This tests the way how new timeouts are added in relation to other timeouts (with 
+ * the same timeout value) already added to the list. For more details how the objects
+ * are created, please refere to the implementation of the TestFactory05 class.
+ *
+ * The expected output should be as follows:
+ * \image html test05-output.png "Output Received by the TraceLog Application"
+ *
+ */
+
+// @}
+
+#endif // TEST_BENCH_H

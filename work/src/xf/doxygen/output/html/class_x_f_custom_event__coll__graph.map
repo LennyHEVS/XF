@@ -1,0 +1,4 @@
+<map id="XFCustomEvent" name="XFCustomEvent">
+<area shape="rect" id="node2" href="$class_x_f_event.html" title="Base class for all types of events and timeouts. " alt="" coords="15,233,175,413"/>
+<area shape="rect" id="node3" href="$classinterface_1_1_x_f_reactive.html" title="Interface to receive and process events. " alt="" coords="9,5,181,171"/>
+</map>
