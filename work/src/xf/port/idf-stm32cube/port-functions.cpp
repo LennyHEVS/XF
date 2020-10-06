@@ -9,6 +9,8 @@
 #include "xf/interface/timeoutmanager.h"
 #include "xf/port/port-functions.h"
 
+extern int32_t zeTickInterval;
+
 using interface::XFTimeoutManager;
 
 /**
@@ -47,8 +49,7 @@ void XF_tick()
  */
 int32_t XF_tickIntervalInMilliseconds()
 {
-    // TODO: Implement XF_tickIntervalInMilliseconds()  
-    /* temp */ return 0;
+	return zeTickInterval;
 }
 
 #endif // USE_XF_PORT_IDF_STM32CUBE_PORT_FUNCTIONS_IMPLEMENTATION

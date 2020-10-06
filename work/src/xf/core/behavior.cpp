@@ -19,6 +19,8 @@ XFBehavior::XFBehavior(bool ownDispatcher)
     {
         _pDispatcher = XFResourceFactory::getInstance()->getDefaultDispatcher();
     }
+    _pCurrentEvent = nullptr;
+    deleteOnTerminate_ = false;
 }
 
 XFBehavior::~XFBehavior()

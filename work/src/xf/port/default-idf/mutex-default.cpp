@@ -5,6 +5,42 @@
 #include "critical/critical.h"	// Provided by the platform used
 #include "mutex-default.h"
 
-// TODO: Implement code for XFMutexDefault class
-
 #endif // USE_XF_MUTEX_DEFAULT_IDF_IMPLEMENTATION
+
+interface::XFMutex* interface::XFMutex::create()
+{
+    return new XFMutexDefault();
+}
+
+void XFMutexDefault::lock()
+{
+	enterCritical();
+}
+
+void XFMutexDefault::unlock()
+{
+	exitCritical();
+}
+
+bool XFMutexDefault::tryLock(int32_t timeout)
+{
+	//TODO: do it better
+	if(inISR())
+	{
+		return true;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+XFMutexDefault::XFMutexDefault()
+{
+
+}
+
+XFMutexDefault::~XFMutexDefault()
+{
+
+}
