@@ -42,6 +42,7 @@ void XF_startTimeoutManagerTimer(uint32_t tickInterval)
 void XF_tick()
 {
 	// TODO: Implement XF_tick()
+	interface::XFTimeoutManager::getInstance()->tick();
 }
 
 /**

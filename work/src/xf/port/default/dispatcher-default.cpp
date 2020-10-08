@@ -34,6 +34,7 @@ void XFDispatcherDefault::start()
 	//TODO: assert thread
 	_bExecuting = true;
 	//TODO: start thread
+	execute(nullptr);
 }
 
 void XFDispatcherDefault::stop()

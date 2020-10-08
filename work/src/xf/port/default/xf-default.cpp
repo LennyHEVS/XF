@@ -6,6 +6,7 @@
 #include "xf/interface/timeoutmanager.h"
 #include "xf/interface/resourcefactory.h"
 #include "xf/interface/dispatcher.h"
+#include "xf/port/default/dispatcher-default.h"
 #include "xf/xf.h"
 
 int32_t zeTickInterval;
@@ -21,12 +22,14 @@ void XF_initialize(int timeInterval)
 void XF_exec()
 {
 	//TODO: modify
-	XFResourceFactory::getInstance()->getDefaultDispatcher()->start();
-	while(true){};
+	while(true)
+	{
+		XF_execOnce();
+	}
 }
 void XF_execOnce()
 {
-
+	XFResourceFactory::getInstance()->getDefaultDispatcher()->start();
 }
 
 #endif // USE_XF_DEFAULT_IMPLEMENTATION
