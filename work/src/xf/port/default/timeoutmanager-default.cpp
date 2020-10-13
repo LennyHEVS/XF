@@ -64,7 +64,9 @@ void XFTimeoutManagerDefault::unscheduleTimeout(int32_t timeoutId, interface::XF
 void XFTimeoutManagerDefault::tick()
 {
     _pMutex->lock();
-    TimeoutList::iterator it = _timeouts.begin();
+
+    //v0.1
+    /*TimeoutList::iterator it = _timeouts.begin();
     while(it!=_timeouts.end())
     {
         (*it)->substractFromRelTicks(XF_tickIntervalInMilliseconds());
@@ -76,6 +78,22 @@ void XFTimeoutManagerDefault::tick()
         else
         {
             it++;
+        }
+    }*/
+
+    //v1.0
+    TimeoutList::iterator first = _timeouts.begin();
+
+    if(first!=_timeouts.end())
+    {
+        (*first)->substractFromRelTicks(XF_tickIntervalInMilliseconds());
+
+        while((*first)->getRelTicks()<=0)
+        {
+            returnTimeout((*first));
+            first = _timeouts.erase(first);
+            if(first == _timeouts.end())
+                break;
         }
     }
     _pMutex->unlock();
@@ -90,7 +108,29 @@ XFTimeoutManagerDefault::XFTimeoutManagerDefault()
 void XFTimeoutManagerDefault::addTimeout(XFTimeout *pNewTimeout)
 {
     _pMutex->lock();
-    _timeouts.push_back(pNewTimeout);
+
+    //v0.1
+    //_timeouts.push_back(pNewTimeout);
+
+    //v1.0
+    int sum = 0;
+    int ticks = 0;
+    int interval = pNewTimeout->getRelTicks();
+
+    TimeoutList::iterator it = _timeouts.begin();
+    while(it!=_timeouts.end())
+    {
+        ticks = (*it)->getRelTicks();
+        if(sum + ticks > interval)
+        {
+            (*it)->setRelTicks(ticks-interval);
+            break;
+        }
+        sum += ticks;
+        it++;
+    }
+    pNewTimeout->setRelTicks(interval-sum);
+    _timeouts.insert(it,pNewTimeout);
     _pMutex->unlock();
 }
 
