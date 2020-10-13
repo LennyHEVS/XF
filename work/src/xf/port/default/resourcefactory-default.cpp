@@ -34,8 +34,6 @@ interface::XFThread* XFResourceFactoryDefault::createThread(
 		interface::XFThread::EntryMethodBody entryMethod,
 		const char* threadName, const uint32_t stackSize)
 {
-
-	//TODO: return default thread
 	return nullptr;
 }
 

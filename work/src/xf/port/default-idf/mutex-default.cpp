@@ -24,15 +24,8 @@ void XFMutexDefault::unlock()
 
 bool XFMutexDefault::tryLock(int32_t timeout)
 {
-	//TODO: do it better
-	if(inISR())
-	{
-		return true;
-	}
-	else
-	{
-		return true;
-	}
+	enterCritical();
+	return true;
 }
 
 XFMutexDefault::XFMutexDefault()

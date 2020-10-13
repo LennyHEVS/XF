@@ -13,23 +13,60 @@ int32_t zeTickInterval;
 
 using interface::XFResourceFactory;
 using interface::XFTimeoutManager;
+
+bool XF::_bInitialized = false;
+bool XF::_bIsRunning = false;
+
+void XF::initialize(int timeInterval /* = 10 */, int argc /* = 0 */, char * argv[] /* = nullptr */)
+{
+    if (!_bInitialized)
+    {
+        // Create and initialize TimeoutManager
+        interface::XFTimeoutManager::getInstance()->initialize(timeInterval);
+        // Start it
+        interface::XFTimeoutManager::getInstance()->start();
+
+        _bInitialized = true;
+    }
+}
+
+int XF::exec()
+{
+    // Start default dispatcher
+    XFResourceFactory::getInstance()->getDefaultDispatcher()->start();
+
+    _bIsRunning = true;
+    int retVal = XFResourceFactory::getInstance()->getDefaultDispatcher()->execute();
+    _bIsRunning = false;
+
+    return retVal;
+}
+
+int XF::execOnce()
+{
+	_bIsRunning = true;
+    int retVal = XFResourceFactory::getInstance()->getDefaultDispatcher()->executeOnce();
+    _bIsRunning = false;
+
+    return retVal;
+}
+
+bool XF::isRunning()
+{
+	return _bIsRunning;
+}
 void XF_initialize(int timeInterval)
 {
-	interface::XFTimeoutManager::getInstance()->initialize(timeInterval);
-	interface::XFTimeoutManager::getInstance()->start();
 	zeTickInterval = timeInterval;
+	XF::initialize(timeInterval,0,nullptr);
 }
 void XF_exec()
 {
-	//TODO: modify
-	while(true)
-	{
-		XF_execOnce();
-	}
+	XF::exec();
 }
 void XF_execOnce()
 {
-	XFResourceFactory::getInstance()->getDefaultDispatcher()->start();
+	XF::execOnce();
 }
 
 #endif // USE_XF_DEFAULT_IMPLEMENTATION

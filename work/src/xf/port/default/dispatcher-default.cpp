@@ -20,27 +20,21 @@ XFDispatcherDefault::XFDispatcherDefault()
 {
 	_bExecuting = false;
 	_pMutex = XFResourceFactory::getInstance()->createMutex();
-	//TODO: assert thread
 }
 
 XFDispatcherDefault::~XFDispatcherDefault()
 {
 	_bExecuting = false;
-	//TODO: stop thread
 }
 
 void XFDispatcherDefault::start()
 {
-	//TODO: assert thread
 	_bExecuting = true;
-	//TODO: start thread
-	execute(nullptr);
 }
 
 void XFDispatcherDefault::stop()
 {
 	_bExecuting = false;
-		//TODO: stop thread
 }
 
 void XFDispatcherDefault::pushEvent(XFEvent* pEvent)

@@ -21,6 +21,7 @@ using interface::XFResourceFactory;
  */
 
 bool XF::_bInitialized = false;
+bool XF::_bIsRunning = false;
 
 static QCoreApplication & getApplication(int argc = 0, char * argv[] = nullptr)
 {
@@ -57,6 +58,11 @@ int XF::execOnce()
 {
     Q_ASSERT(false);    // Not applicable for this port
     return 0;
+}
+
+bool XF::isRunning()
+{
+    return _bIsRunning;
 }
 
 #endif // USE_XF_CLASS_DEFAULT_QT_IMPLEMENTATION

@@ -44,9 +44,5 @@ void XFEventQueueDefault::pop()
 
 bool XFEventQueueDefault::pend()
 {
-	/*_mutex.lock();
-	//TODO: wait?
-	_mutex.unlock();*/
-
 	return !_queue.empty();
 }
