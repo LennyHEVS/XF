@@ -34,7 +34,7 @@ interface::XFTimeoutManager *XFTimeoutManagerDefault::getInstance()
 
 void XFTimeoutManagerDefault::start()
 {
-    XF_startTimeoutManagerTimer(10);
+    XF_startTimeoutManagerTimer(XF_tickIntervalInMilliseconds());
 }
 
 void XFTimeoutManagerDefault::scheduleTimeout(int32_t timeoutId, int32_t interval, interface::XFReactive *pReactive)
