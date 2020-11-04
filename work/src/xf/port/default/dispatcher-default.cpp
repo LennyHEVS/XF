@@ -54,10 +54,13 @@ void XFDispatcherDefault::unscheduleTimeout(int timeoutId, interface::XFReactive
 
 int XFDispatcherDefault::executeOnce()
 {
-	dispatchEvent(_events.front());
-	_events.pop();
+	if(!_events.empty())
+	{
+		dispatchEvent(_events.front());
+		_events.pop();
 
-	return _bExecuting;
+		return _bExecuting;
+	}
 }
 
 int XFDispatcherDefault::execute(const void* param)
